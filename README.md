@@ -5,6 +5,6 @@ Apache + HTTPS + Let's Encrypt Certbot
 PHP + PHP Zip
 PostgreSQL PDO
 composer
-sendemail
+sendmail
 kerberos
 tools
