@@ -10,12 +10,14 @@ RUN apt-get update \
     && apt-get install -y wget
 
 # instalando PostgreSQL PDO
-RUN apt-get install -y libpq-dev \
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # instalando o componente zip do php
-RUN apt-get install -y zlib1g-dev \
+RUN apt-get update \
+    && apt-get install -y zlib1g-dev \
     && docker-php-ext-install zip
 
 # módulo necessário para redirecionar para HTTPS
@@ -29,7 +31,8 @@ RUN a2enmod rewrite \
 # https://hub.docker.com/_/openjdk
 # https://github.com/docker-library/openjdk
 RUN set -eux; \
-	apt-get install -y --no-install-recommends \
+	apt-get update \
+    apt-get install -y --no-install-recommends \
 		bzip2 \
 		unzip \
 		xz-utils \
