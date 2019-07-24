@@ -31,7 +31,7 @@ RUN a2enmod rewrite \
 # https://hub.docker.com/_/openjdk
 # https://github.com/docker-library/openjdk
 RUN set -eux; \
-	apt-get update \
+	apt-get update; \
     apt-get install -y --no-install-recommends \
 		bzip2 \
 		unzip \
